@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RunSettings>
+	<TestRunParameters>
+		<Parameter name="Environment" value="QA" />
+		<Parameter name="URL" value="http://localhost:8888/"/>
+		<Parameter name="username" value="admin" />
+		<Parameter name="password" value="admin" />
+		<Parameter name="browser" value="Chrome" />
+	</TestRunParameters>
+</RunSettings>
+
