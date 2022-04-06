@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using NLog;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
@@ -13,11 +14,14 @@ namespace CSharpSeleniumPractice
     {
         public TestContext TestContext { get; set; }
         public WebDriver driver;
+        private static Logger _logger=LogManager.GetCurrentClassLogger();
 
         [OneTimeSetUp]
         public void Setup()
         {
+           
             driver = new ChromeDriver();
+            _logger.Info("launched the browser");
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
 
@@ -26,8 +30,9 @@ namespace CSharpSeleniumPractice
         [SetUp]
         public void LaunchBrowser()
         {
-            
-            driver.Navigate().GoToUrl(TestContext.Parameters.Get("URL"));
+            var Url = TestContext.Parameters.Get("URL");
+            driver.Navigate().GoToUrl(Url);
+            _logger.Info($"navigate to the Url=>{Url}");
         }
 
         [Test]
