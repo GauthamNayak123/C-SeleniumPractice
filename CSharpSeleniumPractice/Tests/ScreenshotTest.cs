@@ -11,7 +11,8 @@ namespace CSharpSeleniumPractice.Tests
         [Test]
         public void TakeScreenshotTest()
         {
-            string date = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+            string date = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss"); 
+
             string filePath = @"C:\Users\Dell\source\repos\CSharpSeleniumPractice\CSharpSeleniumPractice\TestOutput\";
             string name = filePath + date + ".png";
 
